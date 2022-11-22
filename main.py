@@ -1,8 +1,20 @@
 from CurrencyFile import RealTimeCurrencyConverter
+from HelloTextes import *
+from switches import *
 import sys
 
+
+# Parameters
+doc_name = "Switches.txt"
+
+
+def main():
+    if get_info_from_document(open_text_document(doc_name))[1] == "true":
+        print("\n" * 4)
+        write_text_to_document(doc_name)
+
+
+
 if __name__ == "__main__":
-    url = 'https://api.exchangerate-api.com/v4/latest/USD'
-    converter = RealTimeCurrencyConverter(url)
-    print(converter.convert('INR', 'USD', 100))
+    main()
     sys.exit(0)
