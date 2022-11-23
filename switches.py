@@ -1,4 +1,5 @@
 from CurrencyFile import RealTimeCurrencyConverter
+from HelloTextes import *
 
 # Parameters
 url = 'https://api.exchangerate-api.com/v4/latest/USD'
@@ -34,8 +35,45 @@ def write_text_to_document(doc_name: str):
 
 
 def get_currencies():
-    pass
+    print("///-///")
+    print("1 - EUR")
+    print("2 - USD")
+    print("3 - RSD")
+    print("4 - GBP")
+    print("5 - NOK")
+    print("///-///")
+    get_choice()
 
 
 def change_the_currency(currency_1: str, currency_2: str, amount: int):
     return converter.convert(currency_1, currency_2, amount)
+
+
+def get_choice_language():
+    print("???--------------------???")
+    print("Please, choose your lang :)")
+    print("1 - English")
+    print("2 - Deutsch")
+    print("3 - Српски")
+    print("4 - Français")
+    print("5 - Espagnol")
+    print("???--------------------???")
+    set_language_switch(get_choice())
+
+
+def set_language_switch(choice):
+    match choice:
+        case 1:
+            return print_hello_text_eng()
+        case 2:
+            return print_hello_text_de()
+        case 3:
+            return print_hello_text_srb()
+        case 4:
+            return print_hello_text_fr()
+        case 5:
+            return print_hello_text_sp()
+
+
+def get_currency_switch(choice):
+    pass
