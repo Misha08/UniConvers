@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from CurrencyFile import RealTimeCurrencyConverter
 from HelloTextes import *
 from switches import *
@@ -10,9 +12,9 @@ doc_name = "Switches.txt"
 
 def main():
     if get_info_from_document(open_text_document(doc_name))[1] == "true":
-        print("\n" * 4)
-        write_text_to_document(doc_name)
+        get_choice_language()
 
+        write_text_to_document(doc_name)
 
 
 if __name__ == "__main__":
