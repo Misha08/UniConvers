@@ -29,5 +29,6 @@ def main():
 
 # Point of entry
 if __name__ == "__main__":
+    # Call the main() func
     main()
     sys.exit(0)
