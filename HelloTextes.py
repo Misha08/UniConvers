@@ -1,3 +1,10 @@
+'''
+
+File with different welcome texts for users in different languages,
+5 languages in total: English, German, Serbian, Spanish, French.
+
+'''
+
 def print_hello_text_eng():
     print("///__________________________________________________///")
     print("///               Hello my dear user :)              ///")

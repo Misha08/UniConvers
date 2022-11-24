@@ -1,1 +1,1 @@
-*Switch "print_hello_text" function:true*Switch "print_hello_text" functionFalse
+*Switch "print_hello_text" function:true

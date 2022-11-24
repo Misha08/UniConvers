@@ -1,3 +1,11 @@
+'''
+
+File with logical functions for switching actions
+related to operations with currencies and logic
+
+'''
+
+
 from CurrencyFile import RealTimeCurrencyConverter
 from HelloTextes import *
 
@@ -38,6 +46,7 @@ def write_text_to_document(doc_name: str):
         rw_file.write(doc.split(":")[0] + "False")
 
 
+# Main constructional function in the Program
 def get_currencies():
     print("///-///")
     print("1 - EUR")
@@ -55,10 +64,12 @@ def get_currencies():
     return final_words + change_the_currency(curr_1, curr_2, amm)
 
 
+# Main logical function in the Program
 def change_the_currency(currency_1: str, currency_2: str, amount: int):
     return str(converter.convert(currency_1, currency_2, amount))
 
 
+# Function of the choice the languages
 def get_choice_language_1():
     print("???--------------------???")
     print("Please, choose your lang:)")
@@ -70,6 +81,8 @@ def get_choice_language_1():
     print("???--------------------???")
 
 
+# Directly switch functions
+# Function of the choice the language
 def set_language_switch(choice):
     match choice:
         case 1:
@@ -84,6 +97,7 @@ def set_language_switch(choice):
             return print_hello_text_sp()
 
 
+# Function of getting the currency, which you want to change from
 def get_currency_switch_1(choice):
     match choice:
         case 1:
@@ -98,6 +112,7 @@ def get_currency_switch_1(choice):
             return "NOK"
 
 
+# Function of getting the currency, which you want to change to
 def get_currency_switch_2(choice):
     match choice:
         case 1:
@@ -110,5 +125,3 @@ def get_currency_switch_2(choice):
             return "GBP"
         case 5:
             return "NOK"
-
-
