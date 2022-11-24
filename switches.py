@@ -1,6 +1,10 @@
 from CurrencyFile import RealTimeCurrencyConverter
 from HelloTextes import *
 
+
+# Global variables for values
+choice_1, choice_2 = "", ""
+
 # Parameters
 url = 'https://api.exchangerate-api.com/v4/latest/USD'
 converter = RealTimeCurrencyConverter(url)
@@ -42,23 +46,28 @@ def get_currencies():
     print("4 - GBP")
     print("5 - NOK")
     print("///-///")
-    get_choice()
+    print("First - from")
+    print("Second - to")
+    curr_1 = get_currency_switch_1(get_choice())
+    curr_2 = get_currency_switch_2(get_choice())
+    amm = int(input(f"How many {curr_1} do you want to exchange to {curr_2}: "))
+    final_words = f"The amount of {curr_1} you entered equals the number of {curr_2} equals: "
+    return final_words + change_the_currency(curr_1, curr_2, amm)
 
 
 def change_the_currency(currency_1: str, currency_2: str, amount: int):
-    return converter.convert(currency_1, currency_2, amount)
+    return str(converter.convert(currency_1, currency_2, amount))
 
 
-def get_choice_language():
+def get_choice_language_1():
     print("???--------------------???")
-    print("Please, choose your lang :)")
+    print("Please, choose your lang:)")
     print("1 - English")
     print("2 - Deutsch")
     print("3 - Српски")
     print("4 - Français")
     print("5 - Espagnol")
     print("???--------------------???")
-    set_language_switch(get_choice())
 
 
 def set_language_switch(choice):
@@ -75,5 +84,31 @@ def set_language_switch(choice):
             return print_hello_text_sp()
 
 
-def get_currency_switch(choice):
-    pass
+def get_currency_switch_1(choice):
+    match choice:
+        case 1:
+            return "EUR"
+        case 2:
+            return "USD"
+        case 3:
+            return "RSD"
+        case 4:
+            return "GBP"
+        case 5:
+            return "NOK"
+
+
+def get_currency_switch_2(choice):
+    match choice:
+        case 1:
+            return "EUR"
+        case 2:
+            return "USD"
+        case 3:
+            return "RSD"
+        case 4:
+            return "GBP"
+        case 5:
+            return "NOK"
+
+
